@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632136586519",
+    "project_id": "dfs-flutter",
+    "storage_bucket": "dfs-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632136586519:android:1ee112f174b7837d61d352",
+        "android_client_info": {
+          "package_name": "com.example.dfs_flutter_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7p1wQpFD44j-HCZNDfHmyoiPdIveRPlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
