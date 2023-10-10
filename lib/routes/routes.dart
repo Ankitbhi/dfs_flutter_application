@@ -3,6 +3,7 @@ import 'package:dfs_flutter_application/src/features/authentication/presentation
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_language_screen.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_profile_screen.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/signin_page.dart';
+import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/home_page.dart';
 import 'package:dfs_flutter_application/src/pages/home_page.dart';
 import 'package:flutter/material.dart';
 

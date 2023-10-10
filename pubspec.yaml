@@ -36,6 +36,8 @@ dependencies:
   sqflite: ^2.3.0
   flutter_secure_storage: ^9.0.0
   cupertino_icons: ^1.0.6
+  dropdown_search: ^5.0.6
+  carousel_slider: ^4.2.1
   # digit_components: ^0.0.1+8
   mobile_number: ^2.1.1
   pinput: ^3.0.1
