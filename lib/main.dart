@@ -1,6 +1,7 @@
 import 'package:dfs_flutter_application/core/theme/app_theme.dart';
 import 'package:dfs_flutter_application/routes/routes.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/provider/login_provider.dart';
+import 'package:dfs_flutter_application/src/features/authentication/presentation/provider/start_screen_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => LoginProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
+        ChangeNotifierProvider(create: (_) => StartScreenProvider()),
+      ],
       child: MaterialApp(
         title: 'Flutter Login Example',
         theme: appTheme,

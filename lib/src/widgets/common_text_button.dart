@@ -28,12 +28,13 @@ class CommonTextButton extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Flexible(
-            child: Icon(
-              icon,
-              color: iconColor ?? theme.colorScheme.secondary,
+          if (icon != null)
+            Flexible(
+              child: Icon(
+                icon,
+                color: iconColor ?? theme.colorScheme.secondary,
+              ),
             ),
-          ),
           const SizedBox(
             width: 4,
           ),

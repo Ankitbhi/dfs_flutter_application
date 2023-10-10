@@ -1,4 +1,4 @@
-import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/login_page.dart';
+import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_language_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthChecker extends StatelessWidget {
@@ -28,7 +28,7 @@ class AuthChecker extends StatelessWidget {
           // if (userProvider.user?.isLoggedIn == true) {
           //   return HomePage();
           // } else {
-          return const LoginPage();
+          return const SelectLanguage();
         }
         // }
       },

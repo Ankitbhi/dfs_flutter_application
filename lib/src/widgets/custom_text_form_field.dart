@@ -168,7 +168,7 @@ class _CustomInputState extends State<CustomInput> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        widget.label!,
+                        widget.label ?? '',
                         style: const TextStyle(
                             color: AppColors.inputLabelColor,
                             fontSize: 14,
