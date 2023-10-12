@@ -6,6 +6,7 @@ class CommonTextButton extends StatelessWidget {
   final IconData? icon;
   final Color? iconColor;
   final Color? iconTextColor;
+  final bool selected;
 
   const CommonTextButton({
     super.key,
@@ -14,6 +15,7 @@ class CommonTextButton extends StatelessWidget {
     this.icon,
     this.iconColor,
     this.iconTextColor,
+    this.selected = false,
   });
 
   @override
@@ -43,8 +45,11 @@ class CommonTextButton extends StatelessWidget {
                 child: Text(
               iconText!,
               style: TextStyle(
-                  color: iconTextColor ?? theme.colorScheme.secondary,
-                  fontSize: 12),
+                decoration:
+                    selected ? TextDecoration.underline : TextDecoration.none,
+                color: iconTextColor ?? theme.colorScheme.secondary,
+                fontSize: 14,
+              ),
             )),
         ],
       ),

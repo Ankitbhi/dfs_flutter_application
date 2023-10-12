@@ -36,6 +36,7 @@ class CustomInput extends StatefulWidget {
   final Function? onFieldTap;
   final double? topTextPadding;
   final double? bottomTextPadding;
+  final bool? borderNone;
 
   const CustomInput({
     Key? key,
@@ -69,8 +70,9 @@ class CustomInput extends StatefulWidget {
     this.autocorrect = true,
     this.focusNode,
     this.onFieldTap,
-    this.topTextPadding = 20,
-    this.bottomTextPadding = 20,
+    this.topTextPadding = 10,
+    this.bottomTextPadding = 10,
+    this.borderNone = false,
   }) : super(key: key);
 
   @override
@@ -90,10 +92,10 @@ class _CustomInputState extends State<CustomInput> {
             color: Colors.transparent,
             borderRadius: widget.isBottomBorderRounded
                 ? const BorderRadius.vertical(
-                    bottom: Radius.circular(4),
+                    bottom: Radius.circular(10),
                   )
                 : const BorderRadius.all(
-                    Radius.circular(4),
+                    Radius.circular(10),
                   ),
             child: Tooltip(
               message: widget.controller?.text.toString() ?? '',
@@ -182,21 +184,28 @@ class _CustomInputState extends State<CustomInput> {
                     ],
                   ),
 
-                  focusedErrorBorder: widget.isOutline
-                      ? AppInputBorders.outlineFocusedBorder
-                      : AppInputBorders.focusedBorder,
+                  focusedErrorBorder: widget.borderNone!
+                      ? InputBorder.none
+                      : widget.isOutline
+                          ? AppInputBorders.outlineFocusedBorder
+                          : AppInputBorders.focusedBorder,
                   filled: true,
                   fillColor: widget.backgroundColor ??
                       (widget.enabled == true
                           ? Colors.transparent
                           : Colors.grey.withOpacity(0.06)),
-                  focusedBorder: widget.isOutline
-                      ? AppInputBorders.outlineFocusedBorder
-                      : AppInputBorders.focusedBorder,
+                  focusedBorder: widget.borderNone!
+                      ? InputBorder.none
+                      : widget.isOutline
+                          ? AppInputBorders.outlineFocusedBorder
+                          : AppInputBorders.focusedBorder,
+
                   border: widget.border ??
-                      (widget.isOutline
-                          ? AppInputBorders.outlineBorder
-                          : AppInputBorders.border),
+                      (widget.borderNone!
+                          ? InputBorder.none
+                          : widget.isOutline
+                              ? AppInputBorders.outlineBorder
+                              : AppInputBorders.border),
                 ),
                 validator: widget.validator,
                 onSaved: widget.onSaved,

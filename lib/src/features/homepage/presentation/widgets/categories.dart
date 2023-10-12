@@ -1,4 +1,6 @@
+import 'package:dfs_flutter_application/src/features/homepage/presentation/provider/advisory_page_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -14,19 +16,12 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     int crossAxisCount = (screenWidth / (boxWidth + spacing)).floor();
+    final advisoryProvider = Provider.of<AdvisoryPageProvider>(context);
 
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount,
-        crossAxisSpacing: spacing,
-        mainAxisSpacing: spacing,
-      ),
-      itemBuilder: (BuildContext context, int index) {
-        return SizedBox(
-          width: boxWidth,
-          height: boxWidth,
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {},
           child: Column(children: [
             Container(
               height: 90,
@@ -36,12 +31,41 @@ class _CategoriesState extends State<Categories> {
                     300], // Set the desired color for the circular container
               ),
             ),
-            const Text('name',
+            Text('profile',
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
           ]),
-        );
-      },
-      itemCount: 9,
+        ),
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: spacing,
+            mainAxisSpacing: spacing,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
+              onTap: () {
+                advisoryProvider.nevigateMethod(index, context);
+              },
+              child: Column(children: [
+                Container(
+                  height: 90,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey[
+                        300], // Set the desired color for the circular container
+                  ),
+                ),
+                Text(advisoryProvider.homeNameList[index],
+                    style:
+                        TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+              ]),
+            );
+          },
+          itemCount: advisoryProvider.homeNameList.length,
+        ),
+      ],
     );
   }
 }

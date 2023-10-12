@@ -2,6 +2,7 @@ import 'package:dfs_flutter_application/core/theme/app_theme.dart';
 import 'package:dfs_flutter_application/routes/routes.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/provider/login_provider.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/provider/start_screen_provider.dart';
+import 'package:dfs_flutter_application/src/features/homepage/presentation/provider/advisory_page_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => StartScreenProvider()),
+        ChangeNotifierProvider(create: (_) => AdvisoryPageProvider()),
       ],
       child: MaterialApp(
         title: 'Flutter Login Example',

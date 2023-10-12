@@ -1,4 +1,8 @@
+import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/login_page.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_language_screen.dart';
+import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/signin_page.dart';
+import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/adviosry_page.dart';
+import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AuthChecker extends StatelessWidget {
@@ -28,7 +32,7 @@ class AuthChecker extends StatelessWidget {
           // if (userProvider.user?.isLoggedIn == true) {
           //   return HomePage();
           // } else {
-          return const SelectLanguage();
+          return const HomePage();
         }
         // }
       },

@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
                 ? Colors.white
                 : !enabled
                     ? Colors.white
-                    : AppColors.primaryColor,
+                    : Color.fromARGB(64, 74, 61, 1),
             boxShadow: const [
               BoxShadow(
                   offset: Offset(0, 2),
