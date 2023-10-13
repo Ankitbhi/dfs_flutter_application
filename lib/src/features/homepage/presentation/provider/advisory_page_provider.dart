@@ -1,6 +1,6 @@
+import 'package:dfs_flutter_application/src/features/homepage/business/entities/stock_detail_entity.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/general.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/weather_advisory.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AdvisoryPageProvider extends ChangeNotifier {
@@ -27,7 +27,7 @@ class AdvisoryPageProvider extends ChangeNotifier {
   void onSwipeLeft() {
     if (pageController.page! < advisoryWidgets.length - 1) {
       pageController.nextPage(
-          duration: Duration(milliseconds: 300), curve: Curves.ease);
+          duration: const Duration(milliseconds: 300), curve: Curves.ease);
     }
     notifyListeners();
   }
@@ -35,7 +35,7 @@ class AdvisoryPageProvider extends ChangeNotifier {
   void onSwipeRight() {
     if (pageController.page! > 0) {
       pageController.previousPage(
-          duration: Duration(milliseconds: 300), curve: Curves.ease);
+          duration: const Duration(milliseconds: 300), curve: Curves.ease);
     }
     notifyListeners();
   }
@@ -92,4 +92,31 @@ class AdvisoryPageProvider extends ChangeNotifier {
     'Eligibility ',
     'Status',
   ];
+
+  List<StockDetailEntity>? stockDetails = [
+    StockDetailEntity(
+        name: TextEditingController(text: 'name'),
+        id: 1,
+        quantity: TextEditingController(text: '12'))
+  ];
+  enableEdit(int index) {
+    stockDetails![index].enabled = !stockDetails![index].enabled;
+    notifyListeners();
+  }
+
+  addStock() {
+    stockDetails!.add(StockDetailEntity(
+        name: TextEditingController(),
+        id: 0,
+        quantity: TextEditingController(),
+        enabled: true));
+    notifyListeners();
+  }
+
+  getStockInformation() {
+    stockDetails!.add(StockDetailEntity(
+        name: TextEditingController(text: 'name'),
+        id: 1,
+        quantity: TextEditingController(text: '12')));
+  }
 }

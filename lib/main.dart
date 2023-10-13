@@ -4,6 +4,7 @@ import 'package:dfs_flutter_application/src/features/authentication/presentation
 import 'package:dfs_flutter_application/src/features/authentication/presentation/provider/start_screen_provider.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/provider/advisory_page_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AdvisoryPageProvider()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: kDebugMode,
         title: 'Flutter Login Example',
         theme: appTheme,
         initialRoute: AppRoutes.initialRoute,

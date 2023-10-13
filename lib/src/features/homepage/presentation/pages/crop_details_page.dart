@@ -1,3 +1,4 @@
+import 'package:dfs_flutter_application/src/features/homepage/presentation/widgets/add_button_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -18,13 +19,7 @@ class _CropDetailsPageState extends State<CropDetailsPage> {
         child: Container(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Add more crop sown'),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.add))
-                ],
-              ),
+              AddButtonWidget(name: 'Add more crop sown', onClick: () {}),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
