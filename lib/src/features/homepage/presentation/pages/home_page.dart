@@ -1,5 +1,4 @@
 import 'package:dfs_flutter_application/core/constants/app_color.dart';
-import 'package:dfs_flutter_application/core/constants/app_images.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/provider/advisory_page_provider.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/widgets/advertisement_box.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/widgets/categories.dart';

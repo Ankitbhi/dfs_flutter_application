@@ -3,16 +3,20 @@ import 'package:dfs_flutter_application/src/features/authentication/presentation
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_language_screen.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/select_profile_screen.dart';
 import 'package:dfs_flutter_application/src/features/authentication/presentation/pages/signin_page.dart';
-import 'package:dfs_flutter_application/src/features/advisory/presentation/pages/profile_page.dart';
+import 'package:dfs_flutter_application/src/features/detailsPages/pages/land_details_form.dart';
+import 'package:dfs_flutter_application/src/features/detailsPages/pages/livestock_detail_form.dart';
+// import 'package:dfs_flutter_application/src/features/advisory/presentation/pages/profile_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/adviosry_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/ask_me_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/crop_details_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/fisheries_details_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/home_page.dart';
+import 'package:dfs_flutter_application/src/pages/home_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/liverstock_details_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/schemes_details_page.dart';
 import 'package:dfs_flutter_application/src/features/homepage/presentation/pages/schemes_page.dart';
 import 'package:flutter/material.dart';
+import 'package:dfs_flutter_application/src/features/registration/pages/profile_page.dart';
 
 class AppRoutes {
   static const String initialRoute = '/';
@@ -47,6 +51,12 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const LivertockDetailsPage());
       case '/fisheriesDetails':
         return MaterialPageRoute(builder: (_) => const FisheriesDetailsPage());
+      case '/registration':
+        return MaterialPageRoute(builder: (_) => const ProfilePage());
+      case '/landDetailsForm':
+        return MaterialPageRoute(builder: (_) => const LandDetailForm());
+      case '/liveStockDetailForm':
+        return MaterialPageRoute(builder: (_) => const LivestockDetailForm());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

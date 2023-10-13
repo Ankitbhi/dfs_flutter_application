@@ -21,7 +21,9 @@ class _CategoriesState extends State<Categories> {
     return Column(
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/registration');
+          },
           child: Column(children: [
             Container(
               height: 90,
