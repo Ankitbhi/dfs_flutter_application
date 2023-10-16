@@ -14,15 +14,15 @@ class ProfilePageProvider with ChangeNotifier {
 
   DateTime get date => _date;
 
-  String selectedFarmer = '';
-  String selectedGender = '';
-  String selectedCasteCategory = '';
-  String selectedFarmerCategory = '';
-  String selectedDistrict = '';
-  String selectedBlock = '';
-  String selectedVillagePanchayat = '';
-  String selectedVillage = '';
-  String selectedBank = '';
+  String? selectedFarmer;
+  String? selectedGender;
+  String? selectedCasteCategory;
+  String? selectedFarmerCategory;
+  String? selectedDistrict;
+  String? selectedBlock;
+  String? selectedVillagePanchayat;
+  String? selectedVillage;
+  String? selectedBank;
   final List<String> _typeOfFarmer = [
     'Small Farmer',
     'Large Farmer',
@@ -99,7 +99,6 @@ class ProfilePageProvider with ChangeNotifier {
     notifyListeners();
   }
 
-
   void setTypeOfFarmer(String value) {
     selectedFarmer = value;
     notifyListeners();
@@ -144,8 +143,4 @@ class ProfilePageProvider with ChangeNotifier {
     selectedBank = value;
     notifyListeners();
   }
-
-
-
-
 }

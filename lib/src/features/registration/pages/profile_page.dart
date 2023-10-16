@@ -2,9 +2,9 @@ import 'package:dfs_flutter_application/src/features/registration/widgets/adhaar
 import 'package:dfs_flutter_application/src/features/registration/widgets/bank_detail.dart';
 import 'package:dfs_flutter_application/src/features/registration/widgets/personal_info_detail.dart';
 import 'package:dfs_flutter_application/src/features/registration/widgets/registration_on_submit_dialog.dart';
+import 'package:dfs_flutter_application/src/widgets/common_text_button.dart';
 import 'package:dfs_flutter_application/utils/app_color.dart';
 import 'package:flutter/material.dart';
-
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -24,6 +24,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: CommonTextButton(
+                        iconText: 'Skip',
+                        iconTextColor: Colors.black,
+                        onPressed: () {},
+                      ),
+                    ),
                     const Card(
                       color: AppColors.greyColor,
                       shape: RoundedRectangleBorder(
@@ -78,7 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-                    
                     ElevatedButton(
                       onPressed: () {
                         registrationSubmit(

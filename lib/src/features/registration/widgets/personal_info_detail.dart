@@ -1,5 +1,6 @@
 import 'package:dfs_flutter_application/src/features/registration/provider/profile_page_provider.dart';
 import 'package:dfs_flutter_application/src/widgets/common_single_select_dropdown.dart';
+import 'package:dfs_flutter_application/src/widgets/common_text_button.dart';
 import 'package:dfs_flutter_application/src/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -56,19 +57,9 @@ class _PersonalInformationState extends State<PersonalInformation> {
                   icon: const Icon(Icons.calendar_today),
                   onPressed: () => _selectDate(context),
                 ),
-                // onChanged: (newValue) {
-                //   profileProvider.setFathersName(newValue.toString());
-                // },
-                //  readOnly: true,
                 controller: TextEditingController(
                   text: '${selectedDate.toLocal()}'.split(' ')[0],
                 ),
-                // validator: (value) {
-                //   // if (value.isEmpty) {
-                //   //   return 'Please enter a date';
-                //   // }
-                //   // return null;
-                // },
               ),
               CustomInput(
                 controller: profileProvider.ageController,

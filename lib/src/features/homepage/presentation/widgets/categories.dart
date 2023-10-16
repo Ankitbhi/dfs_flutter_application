@@ -1,4 +1,5 @@
 import 'package:dfs_flutter_application/src/features/homepage/presentation/provider/advisory_page_provider.dart';
+import 'package:dfs_flutter_application/src/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,8 +22,8 @@ class _CategoriesState extends State<Categories> {
     return Column(
       children: [
         GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, '/registration');
+          onTap: () async {
+            await Navigator.pushNamed(context, '/registration');
           },
           child: Column(children: [
             Container(

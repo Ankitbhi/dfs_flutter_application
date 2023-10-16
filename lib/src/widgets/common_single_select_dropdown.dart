@@ -14,6 +14,9 @@ class CustomDropdownSearch<T> extends StatelessWidget {
   final bool isRequired;
   final bool enabled;
   final String? hintText;
+  final double? topTextPadding;
+  final double? bottomTextPadding;
+  final double leftPadding;
 
   const CustomDropdownSearch({
     super.key,
@@ -29,6 +32,9 @@ class CustomDropdownSearch<T> extends StatelessWidget {
     this.isRequired = false,
     this.enabled = true,
     this.hintText,
+    this.topTextPadding = 10,
+    this.bottomTextPadding = 10,
+    this.leftPadding = 15,
   });
 
   @override
@@ -54,13 +60,21 @@ class CustomDropdownSearch<T> extends StatelessWidget {
       ),
       dropdownDecoratorProps: DropDownDecoratorProps(
         dropdownSearchDecoration: InputDecoration(
-          label: Row(
-            children: [
-              if (isRequired) const Text('*'),
-              Text(label ?? ''),
-            ],
+          // label: Row(
+          //   children: [
+          //     if (isRequired) const Text('*'),
+          //     Text(label ?? ''),
+          //   ],
+          // ),
+          contentPadding: EdgeInsets.only(
+            top: topTextPadding!,
+            bottom: bottomTextPadding!,
+            left: leftPadding,
           ),
+          labelText: isRequired ? '*$label' : label,
           border: const OutlineInputBorder(
+            borderSide: BorderSide(
+                width: 2, color: Colors.black, style: BorderStyle.solid),
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
         ),

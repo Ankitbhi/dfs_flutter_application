@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AdvisoryPageProvider()),
         ChangeNotifierProvider(create: (_) => LandDetailFormProvider()),
         ChangeNotifierProvider(create: (_) => LivestockDetailsProvider()),
-
       ],
       child: MaterialApp(
         title: 'Flutter Login Example',
